@@ -1,0 +1,12 @@
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
+export const SET_CHANNEL_INFO = "SET_CHANNEL_INFO";
+export const SET_LOADING = "SET_LOADING";
+export const SET_SOCKET = "SET_SOCKET";
+export const SET_MESSAGE = "SET_MESSAGE";
+export const ADD_USER_CHAT_ROOM = "ADD_USER_CHAT_ROOM";
+export const SET_CURRENT_CHAT = "SET_CURRENT_CHAT";
+export const SET_MESSAGES = "SET_MESSAGES";
+export const ADD_MESSAGE = "ADD_MESSAGE";
+export const SET_CHAT_IMAGE = "SET_CHAT_IMAGE";
+export const SET_USER_IMAGE = "SET_USER_IMAGE";

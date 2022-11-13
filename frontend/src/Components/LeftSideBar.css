@@ -1,0 +1,172 @@
+.LeftSideBar{
+}
+
+.left-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.media-v1{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.no-media-v1{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.left-input-wrapper{
+    display: flex;
+    align-items: center;
+    flex: 0.6;
+}
+
+.left-input{
+    width: 100%;
+    flex: 0.9;
+    height: 40%;
+    font-size: 110%;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #bafaff;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+
+.left-add-icon-wrapper{
+    display: flex;
+    align-items: center;
+    flex: 0.2;
+}
+
+.left-add-icon{
+    margin-left: 10%;
+    
+    transition: 1.0s;
+}
+
+.left-add-icon:hover{
+    color: #9cedff;
+    cursor: pointer;
+}
+
+
+.left-header-text{
+    flex: 0.2;
+    margin-left: 4%;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.media-v2{
+    width: 100%;
+    display: none;
+    align-items: center;
+    padding-bottom: 15%;
+}
+
+.left-add-icon-wrapper-m{
+    display: flex;
+    align-items: center;
+}
+
+.left-header-text-m{
+    margin-left: 4%;
+    font-weight: bold;
+    font-size: 100%;
+    margin-left: 10%;
+}
+
+.left-add-icon-m{
+    margin-left: 10%;
+    
+    transition: 1.0s;
+}
+
+.left-add-icon-m:hover{
+    color: #9cedff;
+    cursor: pointer;
+}
+
+
+@media (max-width: 720px){
+    .media-v1 > .left-header-text{
+        display: none;
+    }
+    .media-v1 > .left-add-icon-wrapper{
+        display: none;
+    }
+    .media-v1 > .left-input-wrapper{
+        flex: 1;
+    }
+    .media-v1{
+        height: 40px;
+    }
+    .media-v2{
+        display: flex;
+    }
+  }
+
+.chat-instance{
+    width: 95%;
+    display: flex;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.chat-instance:hover{
+    background-color: #DCDCDC;
+    cursor: pointer;
+}
+
+
+.chat-instance-img-wrapper{
+    min-width: 40px;
+    flex: 0.15;
+}
+
+.chat-instance-img{
+    width: 70%;
+    border-radius: 50%;
+    margin-left: 10%;
+}
+
+
+.chat-instance-content-wrapper{
+    flex: 0.85;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-instance-content-name-wrapper{
+    width: 100%;
+    flex: 0.4;
+}
+
+.chat-instance-content-name{
+    float: left;
+    font-weight: bold;
+}
+
+
+.chat-instance-content-msg-wrapper{
+    width: 100%;
+    flex: 0.6;
+}
+
+.chat-instance-content-msg{
+    float: left;
+}
+
+
+.left-search-icon:hover{
+    cursor: pointer;
+}

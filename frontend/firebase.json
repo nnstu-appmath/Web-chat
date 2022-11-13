@@ -1,0 +1,31 @@
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites":[
+      {
+        "source": "/api/**",
+        "run": {
+          "serviceId": "gravens-chat"
+        }
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/api/**",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "no-store,max-age=0"
+        }]
+      }
+    ]
+  }
+}

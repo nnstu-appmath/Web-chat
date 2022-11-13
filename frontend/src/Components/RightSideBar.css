@@ -1,0 +1,27 @@
+.RightSideBar{
+    flex: 0.25;
+    border-left: 1px solid #dfebe8;
+}
+
+.RightSideBar{
+    display: flex;
+    flex-direction: column;
+}
+
+.right-header{
+    flex: 0.05;
+
+    width: 100%;
+}
+
+.rh-info{
+    text-align: center;
+    font-size: 250%;
+}
+
+@media(max-width: 720px){
+    .rh-info{
+        font-size: 150%;
+    }
+}
+
