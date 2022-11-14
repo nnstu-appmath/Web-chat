@@ -1,9 +1,9 @@
-from utils import CREATE_CHAT_ROOM_URL, GET_MESSAGES_URL, POST_HEADERS, TEST_ROOM_ID, CREATE_CHAT_ROOM_DATA, SEARCH_CHAT_URL, SEARCH_CHAT_DATA
+from utils import CREATE_CHAT_ROOM_URL, GET_MESSAGES_URL, POST_HEADERS, TEST_ROOM_ID, CREATE_CHAT_ROOM_DATA, SEARCH_CHAT_URL, SEARCH_CHAT_DATA, BASE_URL
 import ast
 
 
 def test_get_messages(client):
-    result = client.get(GET_MESSAGES_URL + TEST_ROOM_ID)
+    result = client.get(BASE_URL + GET_MESSAGES_URL + TEST_ROOM_ID)
     assert result.status_code == 200
 
     result_str = result.data.decode("UTF-8")
@@ -15,7 +15,7 @@ def test_get_messages(client):
 
 
 def test_create_chat_room(client):
-    result = client.post(CREATE_CHAT_ROOM_URL, json=CREATE_CHAT_ROOM_DATA, headers=POST_HEADERS)
+    result = client.post(BASE_URL + CREATE_CHAT_ROOM_URL, json=CREATE_CHAT_ROOM_DATA, headers=POST_HEADERS)
     assert result.status_code == 200
 
     result_str = result.data.decode("UTF-8")
@@ -25,7 +25,7 @@ def test_create_chat_room(client):
 
 
 def test_search_existing_chat_room(client):
-    result = client.post(SEARCH_CHAT_URL, json=SEARCH_CHAT_DATA, headers=POST_HEADERS)
+    result = client.post(BASE_URL + SEARCH_CHAT_URL, json=SEARCH_CHAT_DATA, headers=POST_HEADERS)
 
     assert result.status_code == 200
 
@@ -38,7 +38,7 @@ def test_search_existing_chat_room(client):
 def test_search_missing_chat_room(client):
     temp = SEARCH_CHAT_DATA["room_id"]
     SEARCH_CHAT_DATA["room_id"] += "demo"
-    result = client.post(SEARCH_CHAT_URL, json=SEARCH_CHAT_DATA, headers=POST_HEADERS)
+    result = client.post(BASE_URL + SEARCH_CHAT_URL, json=SEARCH_CHAT_DATA, headers=POST_HEADERS)
     SEARCH_CHAT_DATA["room_id"] = temp
 
     assert result.status_code == 200

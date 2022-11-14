@@ -1,5 +1,5 @@
 from random import randint
-from utils import CREATE_USER_URL, SIGNUP_CREDENTIALS, SIGNUP_FIELDS, POST_HEADERS
+from utils import CREATE_USER_URL, SIGNUP_CREDENTIALS, SIGNUP_FIELDS, POST_HEADERS, BASE_URL
 import ast
 
 
@@ -8,7 +8,7 @@ def test_signup_empty_fields(client):
     for field_name in SIGNUP_FIELDS:
         temp = SIGNUP_CREDENTIALS[field_name]
         SIGNUP_CREDENTIALS[field_name] = ''
-        result = client.post(CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
+        result = client.post(BASE_URL + CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
 
         assert result.status_code == 400
 
@@ -28,7 +28,7 @@ def test_signup_wrong_email_format_input(client):
         temp = SIGNUP_CREDENTIALS['email']
         SIGNUP_CREDENTIALS['email'] = email
 
-        result = client.post(CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
+        result = client.post(BASE_URL + CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
 
         assert result.status_code == 400
 
@@ -46,7 +46,7 @@ def test_wrong_password_format_input(client):
         temp = SIGNUP_CREDENTIALS['password']
         SIGNUP_CREDENTIALS['password'] = password
         SIGNUP_CREDENTIALS['confirmPassword'] = password
-        result = client.post(CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
+        result = client.post(BASE_URL + CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
 
         assert result.status_code == 400
 
@@ -66,7 +66,7 @@ def test_password_doesnt_match(client):
 
     SIGNUP_CREDENTIALS['password'] = password
     SIGNUP_CREDENTIALS['confirmPassword'] = confirm_password
-    result = client.post(CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
+    result = client.post(BASE_URL + CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
 
     assert result.status_code == 400
 
@@ -81,7 +81,7 @@ def test_password_doesnt_match(client):
 def test_correct_signup(client):
     temp = SIGNUP_CREDENTIALS['email']
     SIGNUP_CREDENTIALS['email'] = 'demo' + ''.join([str(randint(0, 9)) for i in range(10)]) + '@yandex.ru'
-    result = client.post(CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
+    result = client.post(BASE_URL + CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
 
     assert result.status_code == 200
 
@@ -93,7 +93,7 @@ def test_correct_signup(client):
 
 
 def test_with_exist_email(client):
-    result = client.post(CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
+    result = client.post(BASE_URL + CREATE_USER_URL, json=SIGNUP_CREDENTIALS, headers=POST_HEADERS)
 
     assert result.status_code == 400
 

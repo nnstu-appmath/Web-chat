@@ -1,4 +1,4 @@
-BASE_URL = 'http://192.168.1.100:8080/'
+BASE_URL = 'http://127.0.0.1:8080'
 CREATE_USER_URL = '/api/create_user'
 GET_USER_URL = '/api/get_user'
 GET_MESSAGES_URL = '/api/get_messages/'
@@ -11,7 +11,7 @@ UPDATE_MESSAGES_PHOTO_URL = '/api/update_messages_photo'
 DEFAULT_IMG = "https://firebasestorage.googleapis.com/v0/b/gravens-chat.appspot.com/o/NoImg.png?alt=media&token=1697ece8-e26f-46e0-a603-078da521e6f0"
 
 SIGNUP_CREDENTIALS = {
-                        'username': 'demo4',
+                        'username': 'demo',
                         'email': 'demo@yandex.ru',
                         'password': 'qwerty',
                         'confirmPassword': 'qwerty',
@@ -22,8 +22,8 @@ GET_USER_DATA = {
     "email": "demo@yandex.ru"
 }
 
-TEST_ROOM_ID = "fVZqRk6CdhMY8LGDQ4aj"
-TEST_USER_ID = "ZWNdU7pr4425w26H01Ql"
+TEST_ROOM_ID = "wHIuEj3gh7YKhlNsytVO"
+TEST_USER_ID = "Za5fiV3NYqgTgDNbR39B"
 
 CREATE_CHAT_ROOM_DATA = {
     "name": "Demo room",
