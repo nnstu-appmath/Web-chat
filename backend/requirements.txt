@@ -3,4 +3,5 @@ Flask==2.1.1
 Flask-Cors==3.0.10
 firebase-admin==5.0.2
 pytest==6.2.4
+werkzeug==2.0.3
 Flask-SocketIO==5.1.1
