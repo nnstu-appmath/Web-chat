@@ -11,7 +11,7 @@ function Chat({dispatch, user, chatId, chatName, socket, messages, headerImg}) {
 
     useEffect(() => {
         const getMessages = async () => {
-            await fetch(`http://192.168.1.202:8080/api/get_messages/${chatId}`).then(data => {
+            await fetch(`https://chat-8zxl.onrender.com/api/get_messages/${chatId}`).then(data => {
                 return data.json()
             }).then(data => {
                 dispatch({type: "SET_MESSAGES", payload: data['data']})
@@ -64,7 +64,7 @@ function Chat({dispatch, user, chatId, chatName, socket, messages, headerImg}) {
         storageRef.put(file).on('state_changed', () => {}, () => {}, 
         async () => {
           const url = await storageRef.getDownloadURL();
-          fetch('http://192.168.1.202:8080/api/update_chat_photo', {
+          fetch('https://chat-8zxl.onrender.com/api/update_chat_photo', {
               method: "POST",
               body: JSON.stringify({
                   imageUrl: url,

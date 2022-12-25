@@ -20,7 +20,7 @@ function LeftSideBar({dispatch, user, chatRooms, socket, currentRoomId, chatId})
             imageUrl: user.user? user.user.imageUrl: ""
         }
 
-        fetch('http://192.168.1.202:8080/api/create_chat_room', {
+        fetch('https://chat-8zxl.onrender.com/api/create_chat_room', {
             method: "POST",
             body: JSON.stringify(roomData),
             headers: {
@@ -78,7 +78,7 @@ function LeftSideBar({dispatch, user, chatRooms, socket, currentRoomId, chatId})
     }
 
     const handleSearchSend = () => {
-      fetch('http://192.168.1.202:8080/api/search_room', {
+      fetch('https://chat-8zxl.onrender.com/api/search_room', {
             method: "POST",
             body: JSON.stringify({
                 room_id: search,

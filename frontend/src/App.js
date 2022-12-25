@@ -16,7 +16,7 @@ function App({dispatch, loading}) {
       dispatch({type: "SET_LOADING", payload: true})
       if (authUser){
           const getUserCredentials = async () => {
-            await fetch('http://192.168.1.202:8080/api/get_user', {
+            await fetch('https://chat-8zxl.onrender.com/api/get_user', {
               method: "POST",
               body: JSON.stringify({
                 email: authUser.email

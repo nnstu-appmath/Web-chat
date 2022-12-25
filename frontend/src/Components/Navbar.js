@@ -27,7 +27,7 @@ function Navbar({dispatch, socket, chatId, user}) {
       storageRef.put(file).on('state_changed', () => {}, () => {}, 
       async () => {
         const url = await storageRef.getDownloadURL();
-        fetch('http://192.168.1.202:8080/api/update_user_photo', {
+        fetch('https://chat-8zxl.onrender.com/api/update_user_photo', {
             method: "POST",
             body: JSON.stringify({
                 imageUrl: url,
@@ -37,7 +37,7 @@ function Navbar({dispatch, socket, chatId, user}) {
                 "Content-type": "application/json; charset=UTF-8"
             }
         })
-        fetch('http://192.168.1.202:8080/api/update_messages_photo', {
+        fetch('https://chat-8zxl.onrender.com/api/update_messages_photo', {
             method: "POST",
             body: JSON.stringify({
                 imageUrl: url,

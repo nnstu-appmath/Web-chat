@@ -41,7 +41,7 @@ function Signup({dispatch, location, user}) {
         setError('')
         e.preventDefault()
 
-        fetch('http://192.168.1.202:8080/api/create_user', {
+        fetch('https://chat-8zxl.onrender.com/api/create_user', {
             method: "POST",
             body: JSON.stringify({
                 username: username,
