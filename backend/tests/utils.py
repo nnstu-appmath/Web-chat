@@ -8,7 +8,7 @@ UPDATE_USER_PHOTO_URL = '/api/update_user_photo'
 UPDATE_CHAT_PHOTO_URL = '/api/update_chat_photo'
 UPDATE_MESSAGES_PHOTO_URL = '/api/update_messages_photo'
 
-DEFAULT_IMG = "https://firebasestorage.googleapis.com/v0/b/gravens-chat.appspot.com/o/NoImg.png?alt=media&token=1697ece8-e26f-46e0-a603-078da521e6f0"
+DEFAULT_IMG = "https://firebasestorage.googleapis.com/v0/b/chat-be175.appspot.com/o/jame2.jpg?alt=media&token=62b371d1-f9c6-427c-a4ef-1f86ea87170f"
 
 SIGNUP_CREDENTIALS = {
                         'username': 'demo',

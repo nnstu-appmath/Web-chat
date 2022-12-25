@@ -48,7 +48,7 @@ function Signup({dispatch, location, user}) {
                 email: email,
                 password: password,
                 confirmPassword: confirmPassword,
-                imageUrl: "https://firebasestorage.googleapis.com/v0/b/gravens-chat.appspot.com/o/NoImg.png?alt=media&token=1697ece8-e26f-46e0-a603-078da521e6f0"
+                imageUrl: "https://firebasestorage.googleapis.com/v0/b/chat-be175.appspot.com/o/jame2.jpg?alt=media&token=62b371d1-f9c6-427c-a4ef-1f86ea87170f"
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8"

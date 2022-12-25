@@ -19,7 +19,9 @@ function LeftSideBar({dispatch, user, chatRooms, socket, currentRoomId, chatId})
             username: user.user.username,
             imageUrl: user.user? user.user.imageUrl: ""
         }
-
+        
+        if (!roomName) return
+        
         fetch('https://chat-8zxl.onrender.com/api/create_chat_room', {
             method: "POST",
             body: JSON.stringify(roomData),
