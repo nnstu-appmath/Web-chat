@@ -20,7 +20,7 @@ function Home({dispatch, authenticated, chatId}) {
 
     useEffect(() => {
         const getS = async () => {
-            const s = await io("http://127.0.0.1:8080")
+            const s = await io("https://chat-8zxl.onrender.com/")
         
             s.on('join_room_announcement', (data) => {
                 console.log("Joined")
