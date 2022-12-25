@@ -10,7 +10,7 @@
       {
         "source": "/api/**",
         "run": {
-          "serviceId": "gravens-chat"
+          "serviceId": "chat-be175"
         }
       },
       {
