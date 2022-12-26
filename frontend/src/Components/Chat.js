@@ -26,7 +26,10 @@ function Chat({dispatch, user, chatId, chatName, socket, messages, headerImg}) {
         setText(e.target.value)
     }
 
-    const handleMessageSend = (e) => {
+    const handleMessageSend = (e=undefined) => {
+        e.preventDefault()
+        if (text == "") return
+
         socket.emit('send_message', {
             room: chatId,
             text: text,
@@ -102,7 +105,7 @@ function Chat({dispatch, user, chatId, chatName, socket, messages, headerImg}) {
                             return getMessage(item)
                         })}
                     </div>
-                    <div className="chat-input-wrapper">
+                    <form className="chat-input-wrapper" onSubmit={handleMessageSend}>
                         <div className="chat-attach-icon-wrapper">
                             <AttachFileIcon fontSize="large" className="chat-attach-icon"/>
                         </div>
@@ -111,7 +114,7 @@ function Chat({dispatch, user, chatId, chatName, socket, messages, headerImg}) {
                             <SendIcon fontSize="large" className="chat-send-icon" onClick={handleMessageSend}>Send</SendIcon>
                         </div>
                         
-                    </div>
+                    </form>
                     
                 </div>
             ):(
