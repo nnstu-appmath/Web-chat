@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect } from 'react'
 import {connect} from 'react-redux'
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Components/Login'
 import Signup from './Components/Signup'
 import Home from './Components/Home'
@@ -33,8 +33,6 @@ function App({dispatch, loading}) {
           }
 
           getUserCredentials()
-
-
           
       } else{
           dispatch({type: "LOGOUT"})
